@@ -11,20 +11,24 @@ participants.insert("Patrice")
 participants.insert("Alpha")
 participants.insert("Patrice")
 
-var ages = Set<UInt>()
+var ages = Set<Int>() // use Int instead of UInt
 
 ages.insert(1)
 ages.insert(2)
 ages.insert(1)
 
-return "nom \(participants)" + ages
+// Convert the sets to strings before concatenating them
+let participantsString = "nom \(participants)"
+let agesString = String(describing: ages)
+let result = participantsString + agesString
+print(result)
 
 // Generic
 class Pile<Chose> {
     
     var choses = [Chose]()
 
-    func addChose(_ chose:Chose) {
+    func addChose(_ chose: Chose) {
         choses.append(chose)
     }
 }
@@ -41,19 +45,17 @@ maPile.addChose("Luca")
 maPile.addChose("Marie")
 
 for nom in maPile.choses {
-    print (nom)
-
+    print(nom)
 }
 
-    /*
-for participant in participants {
-    print(participant)
-}
- func participants() -> [String] {
+// The function signature and implementation are incorrect and unused, so commented out
+/*
+func participants() -> [String] {
 
-let participants: Set = ["Nicolas", "Guillaume", "Daniel", "Alberto", "Alpha", "Patrice"]
-let sortedParticipants = participants.sorted()
-print(sorted)
+    let participants: Set = ["Nicolas", "Guillaume", "Daniel", "Alberto", "Alpha", "Patrice"]
+    let sortedParticipants = participants.sorted()
+    print(sorted)
 
 }
- */
+*/
+
